@@ -96,6 +96,7 @@ html {
   text-align: center;
   padding-top: 5rem;
   padding-bottom: 5rem;
+  color: yellow !important;
 }
 
 .wrapper.home .description {
