@@ -100,6 +100,12 @@ img {
   padding-bottom: 5rem;
 }
 
+@media (min-width: 800px) {
+  .wrapper {
+    padding-top: 10rem;
+  }
+}
+
 .wrapper.home {
   text-align: center;
 }
