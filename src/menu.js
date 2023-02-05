@@ -15,12 +15,11 @@ export function createMenu() {
     const description = createElement("p", `${danie.description}`);
     const price = createElement("p", `${danie.price}`);
 
-    menuCard.classList.add("margin-top", "menuCard");
+    menuCard.classList.add("margin-top", "menuCard", "box-shadow");
     contentInner.classList.add("menu-grid");
 
     menuCard.append(h2, description, price);
     contentInner.append(menuCard);
-    return menuCard;
   });
 
   wrapper.classList.add("menu", "wrapper");

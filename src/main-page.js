@@ -2,6 +2,7 @@ import createElement from "/src/dom.js";
 import { clearContentDiv } from "/src/index.js";
 import { homeContent } from "/src/home.js";
 import { menuContent } from "/src/menu.js";
+import { roomsContent } from "/src/rooms.js";
 
 const content = document.getElementById("content");
 
@@ -56,7 +57,7 @@ function addListeners(a) {
         log = menuContent;
         break;
       case "btnRooms":
-        log = mainPage;
+        log = roomsContent;
         break;
     }
     btn.addEventListener("click", log);

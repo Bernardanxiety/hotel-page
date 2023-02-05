@@ -23,6 +23,11 @@ html {
   color: #fff;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 /* helper classes */
 .margin-top > * + * {
   margin-top: var(--top, 1em);
@@ -64,7 +69,7 @@ html {
   flex-grow: 1;
   font-family: Solitreo, cursive;
   color: #fff;
-  font-size: clamp(1.4rem, 2vw, 2.2rem);
+  font-size: clamp(1.7rem, 2vw, 2.2rem);
 }
 
 .background-image {
@@ -117,11 +122,29 @@ html {
 }
 
 .menuCard {
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 1px 1px 5px #fff;
   padding: 2rem;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
+}
+
+.box-shadow {
+  box-shadow: 1px 1px 5px #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+/* rooms */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-flow: row;
+  gap: 3rem;
+}
+
+.room-card {
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: max-content 1fr min-content;
 }
 /* footer */
 .footer {

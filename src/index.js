@@ -43,6 +43,26 @@ export const restaurantInfo = (function () {
       price: "220zł",
     },
   ];
+  const rooms = [
+    {
+      url: "/src/room1.jpg",
+      description:
+        "Executive Room, M Club lounge access, Guest room, 2 Doubles, High floor",
+      price: "679",
+    },
+    {
+      url: "/src/room1.jpg",
+      description:
+        "Executive Room, M Club lounge access, Guest room, 2 Doubles, High floor",
+      price: "679",
+    },
+    {
+      url: "/src/room1.jpg",
+      description:
+        "Executive Room, M Club lounge access, Guest room, 2 Doubles, High floor",
+      price: "679",
+    },
+  ];
 
   const localisation = "Warsaw";
 
@@ -53,9 +73,14 @@ export const restaurantInfo = (function () {
     return menu;
   }
 
+  function showRooms() {
+    return rooms;
+  }
+
   return {
     showMenu,
     getLocalisation,
+    showRooms,
   };
 })();
 
@@ -79,7 +104,5 @@ function init() {
 
 init();
 
-const pizzaImage = new Image();
 const restaurantImage = new Image();
-pizzaImage.src = Pizza;
 restaurantImage.src = RestaurantImg;
