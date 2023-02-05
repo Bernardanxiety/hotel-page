@@ -1,4 +1,5 @@
 import createElement from "/src/dom.js";
+import { clearContentDiv } from ".";
 
 function homePage() {
   const wrapper = createElement("div", "");
@@ -24,9 +25,10 @@ function homePage() {
   return wrapper;
 }
 
-export default function homeContent() {
+export function homeContent() {
   const contentInner = homePage();
   const content = document.getElementById("content");
+  clearContentDiv();
 
   content.append(contentInner);
 }

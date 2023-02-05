@@ -1,4 +1,9 @@
 import createElement from "/src/dom.js";
+import { clearContentDiv } from "/src/index.js";
+import { homeContent } from "/src/home.js";
+import { menuContent } from "/src/menu.js";
+
+const content = document.getElementById("content");
 
 function header() {
   const header = createElement("header", "");
@@ -9,7 +14,7 @@ function header() {
   const li3 = createElement("li", "");
   const btnHome = createElement("button");
   const btnMenu = createElement("button");
-  const btnContact = createElement("button");
+  const btnRooms = createElement("button");
 
   header.classList.add("header");
 
@@ -20,16 +25,42 @@ function header() {
   ul.appendChild(li3);
   li1.appendChild(btnHome);
   li2.appendChild(btnMenu);
-  li3.appendChild(btnContact);
+  li3.appendChild(btnRooms);
 
   btnHome.textContent = "Home";
   btnMenu.textContent = "Menu";
-  btnContact.textContent = "Contact";
+  btnRooms.textContent = "Rooms";
+
+  btnHome.id = "btnHome";
+  btnMenu.id = "btnMenu";
+  btnRooms.id = "btnRooms";
 
   const buttons = ul.querySelectorAll("button");
   buttons.forEach((btn) => btn.classList.add("navBtn"));
+  const content = document.getElementById("content");
+
+  addListeners(buttons);
 
   return header;
+}
+
+function addListeners(a) {
+  a.forEach((btn) => {
+    const id = btn.id;
+    let log;
+    switch (id) {
+      case "btnHome":
+        log = homeContent;
+        break;
+      case "btnMenu":
+        log = menuContent;
+        break;
+      case "btnRooms":
+        log = mainPage;
+        break;
+    }
+    btn.addEventListener("click", log);
+  });
 }
 
 function footer() {

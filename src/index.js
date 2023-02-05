@@ -3,9 +3,9 @@ import createElement from "/src/dom.js";
 import Pizza from "./pizza.jpeg";
 import RestaurantImg from "./restaurant.jpg";
 import { mainPage } from "/src/main-page.js";
-import homeContent from "/src/home.js";
+import { homeContent } from "/src/home.js";
 
-const restaurantInfo = (function () {
+export const restaurantInfo = (function () {
   const name = "Some restaurant";
   const menu = [
     {
@@ -43,8 +43,13 @@ const restaurantInfo = (function () {
   };
 })();
 
+export function clearContentDiv() {
+  while (content.lastChild) {
+    content.removeChild(content.lastChild);
+  }
+}
+
 const body = document.body;
-// const headerDiv = header();
 const content = document.getElementById("content");
 
 body.classList = "body-init";
@@ -56,12 +61,6 @@ function init() {
 }
 
 init();
-function clearContentDiv() {
-  const body = document.body;
-  while (body.lastChild) {
-    body.removeChild(body.lastChild);
-  }
-}
 
 const pizzaImage = new Image();
 const restaurantImage = new Image();
